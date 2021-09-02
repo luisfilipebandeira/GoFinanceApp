@@ -1,24 +1,17 @@
-import React from 'react';
+import React from "react";
+import { Amount, Container, Title } from "./styled";
 
-import { 
-    Container,
-    Title,
-    Amount
- } from './styles';
-
-interface Props{
-    title: string
-    amount: string
-    color: string
+interface Props<T = string> {
+  color: T;
+  title: T;
+  amount: T;
 }
 
-const HistoryCard: React.FC<Props> = ({title, amount, color}) => {
+export function HistoryCard({ color, title, amount }: Props): JSX.Element {
   return (
-      <Container color={color}>
-          <Title>{title}</Title>
-          <Amount>{amount}</Amount>
-      </Container>
+    <Container color={color}>
+      <Title>{title}</Title>
+      <Amount>{amount}</Amount>
+    </Container>
   );
 }
-
-export default HistoryCard;
